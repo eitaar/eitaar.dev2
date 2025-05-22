@@ -1,0 +1,40 @@
+---
+import Default from './Default.vue';
+import Footer from './Footer.astro';
+const {title,loadNavBar,loadFooter} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script is:inline>
+      if (localStorage.getItem("theme") === null) {
+        document.documentElement.setAttribute("data-theme", "cnlight");
+      } else
+        document.documentElement.setAttribute("data-theme",localStorage.getItem("theme"));
+    </script>
+    <script>
+      import { themeChange } from 'theme-change';
+      themeChange();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="eitaar.dev" />
+    
+    <!-- Open Graph Protocol (OGP) meta tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="eitaar's website" />
+    <meta property="og:image" content="https://eitaar.dev/avatar.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="eitaar" />
+    <meta property="og:url" content="https://eitaar.dev/" />
+    <meta property="og:logo" content="https://eitaar.dev/avatar.png" />
+
+		<title>{title}</title>
+  </head>
+  <body>
+			{!loadNavBar && <Default />}
+      <slot/>
+      {!loadFooter && <Footer />}
+  </body>
+</html>	
+

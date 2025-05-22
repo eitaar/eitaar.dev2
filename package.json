@@ -1,0 +1,32 @@
+{
+  "name": "eitaar.dev",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "bp": "astro build && astro preview --host",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.2.4",
+    "@astrojs/mdx": "^4.2.6",
+    "@astrojs/vue": "^5.0.7",
+    "@iconify-json/devicon-plain": "^1.2.22",
+    "@iconify-json/mdi": "^1.2.3",
+    "@splidejs/splide": "^4.1.4",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.0.15",
+    "astro": "^5.4.3",
+    "astro-expressive-code": "^0.41.2",
+    "astro-icon": "^1.1.5",
+    "daisyui": "^5.0.9",
+    "gsap": "^3.12.7",
+    "pixi-filters": "^6.1.0",
+    "pixi.js": "^8.8.1",
+    "tailwindcss": "^4.0.15",
+    "theme-change": "^2.5.0",
+    "vue": "^3.5.13"
+  }
+}

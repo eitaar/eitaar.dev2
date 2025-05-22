@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+import avatar from '../../assets/img/avatar.png';
+---
+<div class="flex-1 rounded-lg border-[1.5px] border-base-300 shadow">
+  <div class="flex gap-3 py-4 px-4 flex-col lg:flex-row justify-start items-center h-full">
+    <Image src={avatar} alt="Avatar" class="rounded-lg lg:w-1/7 max-w-[12.5vw] min-w-[10vmax] lg:min-w-[10vmin] shadow-lg" />
+    <div class="my-auto">
+      <div class="flex flex-col items-start justify-start flex-wrap">
+        <h1 class="font-Quantico text-6xl lg:text-4xl font-bold tracking-tighter">eitaar</h1>
+        <h2 class="font-Quantico text-3xl lg:text-2xl tracking-tighter text-base-content/70 mx-auto">student?</h2>
+      </div>
+    </div>
+    <div class="divider lg:divider-horizontal my-0 mx-0"></div>
+    <div class="break-all font-Quantico text-2xl lg:text-md text-center lg:text-left  w-full tracking-tighter" >
+      <p>16 | Coding beginner</p>
+      <p>UTC TIME ZONE</p>
+      <p>Learning front-end languages</p>
+    </div>            
+  </div>
+</div>

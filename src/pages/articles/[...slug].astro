@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+// 1. コレクションエントリーごとに新しいパスを生成
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('articles');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+// 2. テンプレートでは、プロパティからエントリーを直接取得できる
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+<Layout title={entry.data.title} description={entry.data.description} loadFooter=false>
+  <main>
+    <article class="prose mx-auto min-w-1/2">
+      <div class="title">
+        <h1 class="">{entry.data.title}</h1>
+        <p class="date">{entry.data.date.getFullYear()}/{entry.data.date.getMonth()+1}/{entry.data.date.getDate()}</p>
+        <div class="flex flex-wrap gap-2">
+          {entry.data.tags.map(tag => (
+            <div class="badge badge-accent">{tag}</div>
+          ))}
+        </div>
+        <hr />
+      </div>
+      <Content class="text-base-content"/>
+    </article>
+  </main>
+</Layout>
