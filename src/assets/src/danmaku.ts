@@ -135,6 +135,7 @@ export async function createPixi() {
 
   window.addEventListener('resize', () => {
     //test
+    //test 2
     app.renderer.resize(canvasArea.offsetWidth, canvasArea.offsetHeight);
   });
 }
